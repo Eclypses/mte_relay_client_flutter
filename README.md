@@ -3,42 +3,40 @@
 </center>
 
 <div align="center" style="font-size:40pt; font-weight:900; font-family:arial; margin-top:50px;" >
-MteRelay Client Flutter Plugin For <br>Amazon Web Services</div>
-<br><br><br>
+MteRelay Client Flutter Plugin </div>
+<br><br>
 
-# mte_relay_client_plugin
-
-### This Flutter plugin provides plug-and-play MTE integration for iOS/Swift and Android/Java Flutter applications, allowing quick integration with very minimal code changes. This Amazon Web Services (AWS) Client Plugin requires a corresponding AWS MteRelay Server API to receive the encoded requests and relay them onto the original API. 
+### This Flutter plugin provides plug-and-play MTE integration for iOS/Swift and Android/Java Flutter applications, allowing quick integration with very minimal code changes. This Client Plugin requires a corresponding MteRelay Server API to receive the encoded requests and relay them onto the original API. 
 <br><br>
 
 ## Overview 
 When you have integrated this Plugin into your Flutter application and have set up and configured the corresponding MteRelay Server API, your client application will make its network calls just as before except that they are now routed through the MteRelay plugin. 
 
-There, the Request is inspected and the relevant information captured. The MteRelay mobile client checks for a corresponding AWS MteRelay Server and if not found, returns an error. However, if the AWS server IS found, a new request is created, the original data is encoded with MTE and sent to the MteRelay server where is it decoded. 
+There, the Request is inspected and the relevant information captured. The MteRelay mobile client checks for a corresponding MteRelay Server and if not found, returns an error. However, if the server IS found, a new request is created, the original data is encoded with MTE and sent to the MteRelay server where is it decoded. 
 
 From there, the original request is sent on to the original destination API. Any response will follow the same path in reverse.
-<br><br>
+<br>
 
-This project is a starting point for a Flutter [plug-in package](https://flutter.dev/to/develop-plugins), a specialized Eclypses AWS MteRelay Client package that includes platform-specific implementation code for Android and iOS. To be useful, this Plugin requires licensed access to an Amazon Web Services MteRelay server instance. 
+This project is a starting point for a Flutter [plug-in package](https://flutter.dev/to/develop-plugins), a specialized Eclypses MteRelay Client package that includes platform-specific implementation code for Android and iOS. To be useful, this Plugin requires licensed access to an MteRelay server instance. 
 
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
 <br><br>
-## Add AWS MteRelay Flutter Plugin to your application:
-- Confirm set-up of corresponding AWS MteRelay API to receive the requests from your application, where they will be decoded and relayed on to the original destination API.
-- Add this [AWS MteRelay Flutter Plugin](https://github.com/Eclypses/eclypses-aws-mte-relay-client-flutter-plugin.git) -  [HowTo](https://docs.flutter.dev/packages-and-plugins/using-packages). 
-  - Currently, this AWS MteRelay Flutter Plugin is not published on pub.dev so add this plugin by editing your pubspec.yaml file as shown here. (Indenting is critical!)
+## Add MteRelay Client Flutter Plugin to your application:
+- Confirm set-up of corresponding MteRelay API to receive the requests from your application, where they will be decoded and relayed on to the original destination API.
+- Add this [Mte-Relay-Client-Flutter](https://github.com/Eclypses/mte_relay_client_flutter.git) -  [HowTo](https://docs.flutter.dev/packages-and-plugins/using-packages). 
+  - Currently, this MteRelay Client Flutter Plugin is not published on pub.dev so add this plugin by editing your pubspec.yaml file as shown here. (Indenting is critical!)
 ``` dart
 dependencies:
     flutter:
         sdk: flutter
     mte_relay_client_plugin:
         git:
-            url: git@github.com:Eclypses/eclypses-aws-mte-relay-client-flutter-plugin.git
+            url: https://github.com/Eclypses/mte_relay_client_flutter.git
 ```
-- In a terminal at the root directory of the project, run Flutter pub get. This should install the AWS MteRelay Client Plugin to your project. 
+- In a terminal at the root directory of the project, run Flutter pub get. This should install the MteRelay Client Plugin to your project. 
 - In the file where you expect to maintain the reference to the MteRelay plugin, import it. 
 ```dart
 import 'package:mte_relay_client_plugin/mte_relay_client_plugin.dart';
