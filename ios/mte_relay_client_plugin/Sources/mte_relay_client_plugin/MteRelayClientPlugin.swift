@@ -270,7 +270,8 @@ public class MteRelayClientPlugin: NSObject, FlutterPlugin, RelayResponseDelegat
         var request = URLRequest(url: url)
         request.httpMethod = method
         request.allHTTPHeaderFields = headers
-        guard let downloadUrl = URL(string: downloadlocation) else {
+        guard let encodedUrlString = downloadlocation.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed),
+              let downloadUrl = URL(string: encodedUrlString) else {
             let message = "Invalid downloadUrl: \(downloadlocation)"
             result(FlutterError(code: "INVALID_ARGUMENTS", message: message, details: nil))
             return
